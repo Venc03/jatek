@@ -55,8 +55,7 @@ public class Character {
 
     @Override
     public String toString() {
-        ArrayList<Equipment> list = equipment;
-        return "You're Character:" + " hp = " + hp + ", agility = " + agility + ", luck = " + luck + ", equipments = " + list;
+        return "You're Character:" + " hp = " + hp + ", agility = " + agility + ", luck = " + luck + ", equipments = " + equipment;
     }
     
     
