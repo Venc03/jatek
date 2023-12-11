@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Character {
-    Random rnd;
+    Random rnd = new Random();
     int hp, agility, luck;
-    ArrayList <Equipment> item;  
+    ArrayList <Equipment> equipment = new ArrayList<Equipment>();  
 
     public Character(int hp, int agility, int luck) {
         this.hp = roll()+12;
@@ -24,9 +24,41 @@ public class Character {
     
     public void pickup(Equipment item, int ammount){
         for (int i = 0; i < ammount; i++) {
-            this.item.add(item);
+            this.equipment.add(item);
             
         }
     }
+    
+    public void use(String item){
+        remove(item);
+    }
+    
+    public void use(String item, int ammount){
+        removeAmmount(item, ammount);
+    }
+    
+    public void use(String item, int ammount, boolean use){
+        if(use == true ){
+            removeAmmount(item, ammount);
+        }
+    }
+    
+    private void remove(String item){
+        this.equipment.remove(item);
+    }
+    
+    private void removeAmmount(String item, int ammount){
+        for (int i = 0; i < ammount; i++) {
+            remove(item);
+        }
+    }
+
+    @Override
+    public String toString() {
+        ArrayList<Equipment> list = equipment;
+        return "You're Character:" + " hp = " + hp + ", agility = " + agility + ", luck = " + luck + ", equipments = " + list;
+    }
+    
+    
     
 }
