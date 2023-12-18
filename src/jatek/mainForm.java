@@ -10,14 +10,15 @@ package jatek;
  */
 public class mainForm extends javax.swing.JFrame {
 
+    private Places p;
     /**
      * Creates new form mainForm
      */
     public mainForm() {
         initComponents();
         
-        Start s = new Start();
-        jTextArea1.setText(s.description());
+        p = new Start();
+        jTextArea1.setText(p.description());
     }
 
     /**
@@ -79,9 +80,11 @@ public class mainForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Begining b = new Begining();
-        jTextArea1.setText(b.description());
+        p = new Begining();
+        jTextArea1.setText(p.description());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
