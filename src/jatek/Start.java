@@ -2,7 +2,7 @@ package jatek;
 public class Start extends Places {
     @Override
     public String description(){
-        return "This is the start! Go left.";
+        return "This is the start! Go Onwards.";
     }
 
     @Override
@@ -12,6 +12,6 @@ public class Start extends Places {
 
     @Override
     public String BtnWay() {
-        return "Left";
+        return "Onwards";
     }
 }

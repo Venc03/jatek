@@ -1,28 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package jatek;
 
-/**
- *
- * @author vegi.d.mark
- */
 public class mainForm extends javax.swing.JFrame {
 
     private Places p;
-    /**
-     * Creates new form mainForm
-     */
+    
     public mainForm() {
         initComponents();
+        
         
         p = new Start();
         jTextArea1.setText(p.description());
         jTextArea1.insert(p.description() + "\n", 0);
-        
         jButton2.setText(p.BtnWay());
         jButton1.setVisible(false);
+        p = new Begining();
+        jButton2.setText(p.BtnWay());
+        jButton1.setText(((OtherWay)p).BtnOtherWay());
+        p = new Left();
+        p = new Right();
     }
 
     @SuppressWarnings("unchecked")
@@ -89,20 +85,24 @@ public class mainForm extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         p = p.oneWay();
         jTextArea1.insert(p.description() + "\n", 0);
-        jTextArea1.insert(p.description() + "\n", 0);
-        jTextArea1.insert(p.description() + "\n", 0);
-        jTextArea1.insert(p.description() + "\n", 0);
-        jTextArea1.insert(p.description() + "\n", 0);
-        jTextArea1.insert(p.description() + "\n", 0);
+        jTextArea1.setCaretPosition(0);
+        
+        jTextArea1.setText(p.description());
+        jButton2.setText(p.BtnWay());
+        
+        if(p instanceof OtherWay){
+            jButton1.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        p = ((OtherWay)p).OtherWay();
         jTextArea1.insert(p.description() + "\n", 0);
         jTextArea1.setCaretPosition(0);
         
         jTextArea1.setText(p.description());
         jButton2.setText(p.BtnWay());
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

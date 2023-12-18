@@ -1,18 +1,28 @@
 package jatek;
 
-public class Begining extends Places {
+public class Begining extends Places implements OtherWay{
     @Override
     public String description(){
-        return "This is the begining. Go onwards.";
+        return "This is the begining. Go to right or left.";
     }
 
     @Override
     public Places oneWay() {
-        throw new UnsupportedOperationException("we dont know where to from the start"); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return new Right();
     }
 
     @Override
     public String BtnWay() {
-        return "Onwards";
+        return "Right";
+    }
+
+    @Override
+    public Places OtherWay() {
+        return new Left();
+    }
+
+    @Override
+    public String BtnOtherWay() {
+        return "Left";
     }
 }
